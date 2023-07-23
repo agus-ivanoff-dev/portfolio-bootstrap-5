@@ -1,135 +1,345 @@
 /*
 
+font-family: 'Marck Script', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
 font-family: 'Rubik Dirt', cursive;
 
 */
 
 
-/************************* RESPONSIVE********************************/
-@media screen and  (max-width:767px){
-    .navbar-brand{
-        display: none;
-    }
-}
+/************************************************** RESPONSIVE  ********************************************************/
 
-@media screen and (min-width:700px){
-    .hero-inferior img{
-        max-width: 600px;
-    }
-}
-
-
-@media screen and (max-width:400px){
-    .overlay p{
+@media screen and (max-width:400px) {
+    .overlay p {
         font-size: 18px;
     }
 
-    .overlay i{
-        font-size:40px;
+    .overlay i {
+        font-size: 40px;
     }
 
 }
 
-
-/************************* BARRA DE NAVEGACIÓN ********************************/
-
-.navbar{
-    padding:2rem;
-    background-color: #f5f6f7;
+@media screen and (max-width:574px) {
+    .brand-name {
+        display: none;
+    }
+    .navbar ul > li{
+        border-bottom: 1px solid hsla(157, 100%, 50%, 0.283);
+        background-image: linear-gradient(to bottom, hsl(204, 6%, 17%), hsl(228, 17%, 12%), hsl(240, 26%, 16%));
+        border-radius: 20px;
+        
+    }
 }
 
-.navbar-collapse{
-    align-items: center;
-    justify-content: space-between;
+@media screen and (max-width:750px) {
+    .brand-name {
+        display: none;
+    }
+    
+}
+
+
+@media screen and (max-width:1399px){
+    .hero-right{
+        border-radius: 60px;
+        width: 400px;
+        height: 250px;
+        background-image: url('images/hero-img.png');
+        background-position:center left ; /* Centrar la imagen en el div */
+
+    }
+    
 }
 
 
 
+/************************************************** ESTILOS GENERALES *********************************************************/
 
+body {
+    background-image: linear-gradient(to bottom, hsl(204, 6%, 17%), hsl(228, 17%, 12%), hsl(240, 26%, 16%));
+}
 
-/************************* ESTILOS GENERALES ********************************/
-section{
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-h1{
-    font-size: 2.5rem;
+h1 {
     font-family: 'Rubik Dirt', cursive;
 }
 
-.seccion-oscura{
-    background-color: #1b1b32;
+
+p {
     color: white;
+    letter-spacing: 1px;
+
 }
 
-.seccion-titulo{
+
+
+
+
+
+.hr-container{
+    width: 55%;
+    margin: auto;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;                                               /* Transición para suavizar el efecto */
+}
+
+
+
+
+.hr-container::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;                                                           /* Ajusta la distancia del subrayado con respecto al texto */
+    left: 0;
+    right: 0;
+    height: 1px;                                                            /* Ajusta la altura del subrayado */
+    background: linear-gradient(to right, hsl(224, 65%, 28%),hsl(235, 45%, 63%),  hsl(240, 46%, 26%)); /* Cambia los colores del degradado aquí */
+    opacity: 1;                                                             /* Inicialmente, el subrayado es invisible */
+    transition: opacity 0.4s ease-in;                                       /*  Transición para suavizar la aparición del subrayado */
+}
+
+
+.btn-info {
+    font-size: 1.1.rem;
+    margin: 20px;
+
+}
+
+.seccion-titulo {
     font-size: 2rem;
     padding: 15px 0;
     font-family: 'Rubik Dirt', cursive;
+    color: white;
 }
 
-.seccion-texto{
+.seccion-texto {
     font-size: 1.2rem;
+}
 
+
+.seccion-descripcion {
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+.border-bottom {
+    position: relative;
+    padding-bottom: 10px;                 /* Ajusta el espacio para que no se solape con el degradado */
+    border-bottom: 2px solid transparent; /* Establecer un borde transparente */
+}
+
+.border-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;    /* Altura del borde degradado */
+    background-image: linear-gradient(to right, #3498db, #2ecc71, #f1c40f);      /* Degradado de tres colores */
+}
+
+
+
+
+
+/************************************************** BARRA DE NAVEGACIÓN Y BRAND NAME *********************************************************/
+
+.navbar {
+    width: auto;
+    padding: 2rem;
+    margin-bottom: 150px;
+    background-color: #00000000;
+}
+
+.brand-name h2{
+    min-width: 210px;
+    margin: 55px 0px 0px 20px;
+    color: hsla(0, 0%, 61%, 0.197);
+    font-size: 2rem;
+    font-family: 'Marck Script', cursive;
+}
+
+.brand-name h2:hover{ 
+    font-size: 1.9rem;
+    transform: translateY(0px);
+    background: linear-gradient(to right, hsl(0, 60%, 54%),hsl(235, 45%, 63%),  hsl(240, 46%, 26%));; /* Gradiente lineal inicial */
+    -webkit-background-clip: text; /* Utilizar el gradiente como clip de fondo para el texto (WebKit/Blink) */
+    color: transparent; /* Hacer el texto transparente para que se muestre el gradiente */
+    cursor: default;
+    transition: background 0.5s ease; /* Transición para el cambio de fondo (gradiente) */
 
 }
 
-.btn-info{
-    font-size: 1.1.rem;
-    margin:20px;
+.collapse{
+    margin-top: 35px;
+    justify-content: space-around;
+}
+
+
+.navbar-collapse li > a {
     
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;                                               /* Transición para suavizar el efecto */
+
 }
 
-.seccion-descripcion{
-    font-size: 1.2rem;
-    color:#584e4e;
+.navbar-nav li > a:hover {
+    color: hsla(0, 0%, 100%, 0.608);
+    /* color: hsla(180, 62%, 80%, 0.508); */
+}
 
+.navbar-nav li > a:active {
+    color: whitesmoke;
+}
+
+.navbar-nav li > a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;                                                           /* Ajusta la distancia del subrayado con respecto al texto */
+    left: 0;
+    right: 0;
+    height: 1px;                                                            /* Ajusta la altura del subrayado */
+    background: linear-gradient(to right, hsl(0, 60%, 54%),hsl(235, 45%, 63%),  hsl(240, 46%, 26%));; /* Cambia los colores del degradado aquí */
+    opacity: 0;                                                             /* Inicialmente, el subrayado es invisible */
+    transition: opacity 0.4s ease-in;                                       /*  Transición para suavizar la aparición del subrayado */
 }
 
 
-.about-me{
-    height: 500px;
-    padding: 10px;
+.navbar-nav li > a:hover::after {
+    opacity: 1;                                                             /* Cuando el usuario hace hover, el subrayado se hace visible */
 }
 
-.about-me .contenedor{
-    max-width: 600px;
+/* .navbar-border-bottom {
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+
 }
 
+.navbar-border-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
 
-/************************* SECCIÓN HERO ********************************/
+    background-image: linear-gradient(to right, #3498db, #2ecc71, #f1c40f);
 
-.hero{
-    background-color: #f5f6f7;
+} */
+
+
+
+/************************************************** SECCIÓN HERO *********************************************************/
+
+.hero {
+    height: 70vh;
     min-width: 450px;
     text-align: center;
 }
 
-.hero-principal{
+.hero-left {
     padding: 3rem;
 }
 
-.hero-imagen-dev{
-    width: 200px;
-    height: 200px;
-    margin: 20px;
+.hero-left h1 {
+    color: rgba(255, 255, 255, 0.67);
 }
 
-.hero-principal h2{
+.hero-left h2 {
+    margin-top: 20px;
     font-size: 1.5rem;
-    color: #615151;
+    color: #ffffffad;
 
+}
+
+.hero-left .btn{
+    margin:30px;
+    padding: 10px 60px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 1.5s ease; /* Transición para suavizar el cambio de color de fondo */
+  }
+  
+ 
+  .hero-left .btn:hover {
+    color: rgb(235, 224, 235);
+    background-image: linear-gradient(to right, hsl(0, 60%, 54%),hsl(235, 45%, 63%),  hsl(240, 46%, 26%)); /* Gradiente lineal de rojo a azul al hacer hover */  
+}
+  
+.hero .bi-info-circle{
+    margin: 115px 20px 20px 0px;
+    color: white;
+    font-size:20px ;
+}
+
+.hero p{
+    margin: 120px 20px 20px 0px;
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+ 
+.hero-right{
+    border-radius: 30px;
+    width: 600px;
+    height: 400px;
+    background-image: url('images/hero-img.png');
+    background-size: cover; /* Ajustar la imagen para que cubra completamente el div */
+    background-repeat: no-repeat; /* Evitar que la imagen se repita */
+    background-position: center; /* Centrar la imagen en el div */
 }
 
 
 
 
-/************************* EXPERIENCIA ********************************/
-.experiencia{
-    padding: 40px 40px 60px 40px; 
+/************************************************** NOSOTROS *********************************************************/
+
+
+.about-me {
+    height: 500px;
+    padding: 10px;
+
+}
+
+.about-me .contenedor {
+    max-width: 600px;
+}
+
+
+
+
+
+
+
+
+/************************************************** EXPERIENCIA *********************************************************/
+
+.experiencia {
+    padding: 40px 40px 60px 40px;
 
 }
 
@@ -142,7 +352,7 @@ h1{
 
 }
 
-.experiencia .columna{
+.experiencia .columna {
     padding: 20px;
     border: 2px solid #8080804d;
     display: flex;
@@ -154,55 +364,37 @@ h1{
 
 
 
-.experiencia .columna:hover{
-    color:white;
+.experiencia .columna:hover {
+    color: white;
     background-color: #1b1b32;
 }
 
-.seccion-clara{
-    color: black;
-    background-color: white;
 
-}
 
-.seccion-oscura{
-    color: white;
-    background-color: black;
-
-}
-
-.texto-negro{
-    color: black;
-
-}
-
-.texto-blanco{
-    color: white;
-}
-
-.experiencia-titulo{
+.experiencia-titulo {
     font-size: 25px;
     font-weight: bold;
     margin: 10px 0;
 }
 
-.badges-contenedor{
+.badges-contenedor {
     font-size: 20px;
     font-weight: bold;
-    margin:10px 0;;
+    margin: 10px 0;
+    ;
 }
 
-.badge{
+.badge {
     margin: 5px;
 }
 
 /* proyectos */
 
-.proyectos-recientes{
+.proyectos-recientes {
     padding: 40px;
 }
 
-.proyectos-recientes img{
+.proyectos-recientes img {
     height: 100%;
     width: 100%;
     padding: 10px;
@@ -211,165 +403,168 @@ h1{
     transition: all 0.2s ease;
 }
 
-.proyectos-contenedor{
+.proyectos-contenedor {
     padding-top: 60px;
     margin-bottom: 40px;
 }
 
 
 
-.proyecto{
-    position:relative;
-}
-.proyecto:hover img{
-   opacity: 0.2;
+.proyecto {
+    position: relative;
 }
 
-.overlay{
+.proyecto:hover img {
+    opacity: 0.2;
+}
+
+.overlay {
     transition: all 0.2s ease;
     opacity: 0;
-    position:absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.overlay p{
+.overlay p {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 0;
 }
-.proyecto:hover .overlay{
-    opacity:1;
+
+.proyecto:hover .overlay {
+    opacity: 1;
 }
 
 
-.overlay i{
+.overlay i {
     color: black;
     font-size: 60px;
-    margin:10px;
+    margin: 10px;
 }
 
 
 /************************* ARTICULOS ********************************/
 
-.articulos{
+.articulos {
     min-height: 500px;
-    padding:30px;
+    padding: 30px;
 
 }
 
-.articulos .card{
+.articulos .card {
     width: 80%;
     max-width: 600px;
     margin: 20px;
 }
 
-.articulos .card-header{
+.articulos .card-header {
     font-weight: bold;
 }
 
 
 /************************* TESTIMONIOS ********************************/
 
-.testimonios{
-    padding:40px 40px 80px 40px;
+.testimonios {
+    padding: 40px 40px 80px 40px;
 
 }
 
-.testimonios .carousel{
+.testimonios .carousel {
     max-width: 800px;
 }
 
 
-.carousel-item{
+.carousel-item {
     height: 500px;
 }
 
 
 /************************* CONTACTO ********************************/
 
-.contacto .container{
+.contacto .container {
     max-width: 1100px;
-    min-width: 200px;
-    padding:20px;
+    min-width: 200pxHR;
+    padding: 40px;
 }
 
-.contacto .rectangulo{
-    margin-top:-5rem;
-    background-color: rgb(13,110,253);
+.contacto .rectangulo {
+    margin-top: -5rem;
+    background-color: rgb(13, 110, 253);
     border-radius: 10px;
     box-shadow: 0px 1px 4px 1px white;
 }
 
 
-.contacto .row{
+.contacto .row {
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.contacto .descripcion{
+.contacto .descripcion {
     color: white;
     font-size: 1.2rem;
 }
 
-.contacto button{
-    color:white;
+.contacto button {
+    color: white;
     font-weight: bold;
     background-color: transparent;
     border: 2px solid white;
     padding: 1.25em 2em;
-    margin:10px;
+    margin: 10px;
     border-radius: 100px;
     transition: all 0.2s ease-in-out;
 }
 
 
-.contacto button:hover{
+.contacto button:hover {
     background-color: white;
     color: black;
 
 
 }
 
-.contacto button i{
-color:white;
-font-size: 1.3rem;
-transition: all 0.2s ease-in-out;
+.contacto button i {
+    color: white;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
 }
 
-.contacto button:hover i{
-    color:black;
+.contacto button:hover i {
+    color: black;
 }
-.contacto i{
-    color:white;
+
+.contacto i {
+    color: white;
     font-size: 1.3rem;
     transition: all 0.2s ease-in-out;
 }
 
 /************************* FOOTER ********************************/
 
-footer{
+footer {
     min-height: 500px;
 
 }
 
-.footer-logo{
+.footer-logo {
     height: 80px;
     width: 80px;
     margin: 10px;
 }
 
 
-.footer-texto{
+.footer-texto {
     font-size: 1.5rem;
     padding: 20px;
     margin-bottom: 30px;
 }
 
-.iconos-redes-sociales a{
+.iconos-redes-sociales a {
     width: 50px;
     height: 50px;
     display: flex;
@@ -379,31 +574,42 @@ footer{
     margin: 10px;
     border: 2px solid white;
     border-radius: 50%;
-    transition: all 0.2s ease-in;
+    transition: all 0.4s linear;
 
 }
 
-.iconos-redes-sociales i{
+.iconos-redes-sociales i {
     color: white;
     font-size: 1.5rem;
-    transition: all 0.2s ease-in;
+    transition: all 0.4s linear;
 
 }
 
 
-.iconos-redes-sociales a:hover{
+.iconos-redes-sociales a {
+    margin: 10px;
+}
+
+.iconos-redes-sociales a:hover {
     background-color: white;
-    border:2px solid rgb(13,110,253);
+    padding: 25px;
+    border: 6px inset rgb(209, 9, 102);
 
 }
 
-.iconos-redes-sociales a:hover i{
-    color:black;
+.iconos-redes-sociales a:active {
+    background-color: white;
+    border: 8px groove rgba(131, 31, 168, 0.443);
+
+}
+
+.iconos-redes-sociales a:hover i {
+    color: black;
 }
 
 
-.derechos-de-autor{
+.derechos-de-autor {
     font-size: 15px;
-    color:#aeaeae;
+    color: #aeaeae;
     padding: 20px;
 }
